@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { useUser } from '../features/authentication/useUser';
 import Spinner from './Spinner';
@@ -33,5 +34,9 @@ function ProtectedRoute({ children }) {
   //4. if there ia a authenticated user, render the app;
   if (isAuthenticated) return children;
 }
+
+ProtectedRoute.propTypes = {
+  children: PropTypes.node,
+};
 
 export default ProtectedRoute;
