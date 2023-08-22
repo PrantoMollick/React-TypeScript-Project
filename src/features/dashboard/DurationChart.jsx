@@ -125,7 +125,7 @@ function prepareData(startData, stays) {
   }
 
   const data = stays
-    .reduce((arr, cur) => {
+    ?.reduce((arr, cur) => {
       const num = cur.numNights;
       if (num === 1) return incArrayValue(arr, '1 night');
       if (num === 2) return incArrayValue(arr, '2 nights');
@@ -163,7 +163,7 @@ function DurationChart({ confirmedStays }) {
             cy="50%"
             paddingAngle={3}
           >
-            {data.map(entry => (
+            {data?.map(entry => (
               <Cell
                 fill={entry.color}
                 stroke={entry.color}
